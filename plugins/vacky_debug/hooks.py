@@ -80,11 +80,14 @@ def on_post_tool_call(**kwargs: Any) -> None:
     result = kwargs.get("result", "")
     duration_ms = kwargs.get("duration_ms", 0)
 
-    result_preview = str(result)[:300].replace("\n", " ")
+    result_len = len(str(result))
+    result_preview = str(result)[:200].replace("\n", " ")
+
     logger.info(
-        "[HOOK:post_tool_call] tool=%s duration=%sms result_preview=%s",
+        "[HOOK:post_tool_call] tool=%s duration=%sms result_len=%d result_preview=%s",
         tool_name,
         duration_ms,
+        result_len,
         result_preview,
     )
 
@@ -105,12 +108,24 @@ def on_pre_llm_call(**kwargs: Any) -> None:
     msg_count = len(messages)
     total_chars = sum(len(str(m.get("content", ""))) for m in messages)
 
+    # Phase 1 学习：分析 messages 的角色分布
+    role_counts = {}
+    for m in messages:
+        role = m.get("role", "unknown")
+        role_counts[role] = role_counts.get(role, 0) + 1
+
+    # 检查最后一条消息的角色（决定下一步行为）
+    last_role = messages[-1].get("role") if messages else "none"
+
     logger.info(
-        "[HOOK:pre_llm_call] model=%s messages=%d tools=%d total_chars=%d",
+        "[HOOK:pre_llm_call] model=%s messages=%d tools=%d total_chars=%d "
+        "roles=%s last_role=%s",
         model,
         msg_count,
         tool_count,
         total_chars,
+        role_counts,
+        last_role,
     )
 
     _stats["llm_calls"].append(
@@ -119,6 +134,8 @@ def on_pre_llm_call(**kwargs: Any) -> None:
             "model": model,
             "message_count": msg_count,
             "tool_count": tool_count,
+            "role_counts": role_counts,
+            "last_role": last_role,
             "timestamp": time.time(),
         }
     )
@@ -165,12 +182,35 @@ def on_session_end(**kwargs: Any) -> None:
         return
 
     duration = _format_duration(_stats.get("session_start_time"))
+
+    # Phase 1 学习：分析 LLM 调用序列
+    llm_calls = _stats.get("llm_calls", [])
+    tool_calls = _stats.get("tool_calls", [])
+
+    # 计算 tool/llm 比例
+    tool_llm_ratio = len(tool_calls) / len(llm_calls) if llm_calls else 0
+
     logger.info(
-        "[HOOK:on_session_end] duration=%s tool_calls=%d llm_calls=%d",
+        "[HOOK:on_session_end] duration=%s llm_calls=%d tool_calls=%d "
+        "tool_llm_ratio=%.2f",
         duration,
-        len(_stats.get("tool_calls", [])),
-        len(_stats.get("llm_calls", [])),
+        len(llm_calls),
+        len(tool_calls),
+        tool_llm_ratio,
     )
+
+    # 打印调用序列摘要
+    if llm_calls:
+        logger.info("[HOOK:on_session_end] LLM call sequence:")
+        for i, call in enumerate(llm_calls, 1):
+            logger.info(
+                "  #%d: model=%s msgs=%d tools=%d last_role=%s",
+                i,
+                call.get("model"),
+                call.get("message_count"),
+                call.get("tool_count"),
+                call.get("last_role"),
+            )
 
 
 # ─────────────────────────────────────────
