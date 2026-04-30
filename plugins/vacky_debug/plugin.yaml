@@ -1,0 +1,9 @@
+name: vacky_debug
+version: 1.0.0
+description: "Personal debug plugin for vacky — zero-conflict development tools and hooks for learning hermes-agent internals. Auto-loaded as bundled backend."
+author: vacky
+kind: backend
+provides_tools:
+  - vacky_inspect_state
+  - vacky_dump_context
+  - vacky_trigger_breakpoint
