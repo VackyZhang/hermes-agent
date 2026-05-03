@@ -68,11 +68,21 @@ hermes logs --level DEBUG | grep vacky
 按 `agent-learning-handbook.md` 的 5 个阶段推进：
 
 ### 阶段 1：建立地图感（1-2周）
+
+**分组说明**：
+- Hermes Agent：可启动、可交互（实操体验）
+- Claude Code：只读代码、对比架构（不编译、不启动）
+
+#### 分组 A：Hermes Agent 可操作体验
 | 子阶段 | 目标 | 笔记位置 | 状态 |
 |---------|------|---------|------|
 | s1.1 | Hermes Agent 环境初体验 | `architecture/s1.1-hermes-first-impression.md` | ⬜ |
-| s1.2 | Claude Code 环境初体验 | `architecture/s1.2-claude-first-impression.md` | ⬜ |
 | s1.3 | Hermes 主循环泳道图 | `architecture/s1.3-hermes-main-loop.svg` | ⬜ |
+
+#### 分组 B：Claude Code 只读代码分析（不编译、不启动）
+| 子阶段 | 目标 | 笔记位置 | 状态 |
+|---------|------|---------|------|
+| s1.2 | Claude Code 代码初读 | `architecture/s1.2-claude-first-impression.md` | ⬜ |
 | s1.4 | Claude 主循环泳道图 | `architecture/s1.4-claude-main-loop.svg` | ⬜ |
 
 ### 阶段 2：框架理解 + 单点突破（3-4个月）
@@ -80,7 +90,7 @@ hermes logs --level DEBUG | grep vacky
 |---------|------|---------|------|
 | s2.1 | AIAgent 核心循环 | `architecture/s2.1-agent-loop.md` | ⬜ |
 | s2.2 | CLI 架构与命令 | `architecture/s2.2-cli-architecture.md` | ⬜ |
-| s2.3 | Claude Code 工具设计精读 | `architecture/s2.3-claude-tool-design.md` | ⬜ |
+| s2.3 | Claude Code 工具设计代码分析（只读） | `architecture/s2.3-claude-tool-design.md` | ⬜ |
 | s2.4 | Hermes 工具系统精读 | `architecture/s2.4-tool-system.md` | ⬜ |
 | s2.5~s2.7 | Gateway/TUI/插件（待补充） | `architecture/` 待创建 | ⬜ |
 

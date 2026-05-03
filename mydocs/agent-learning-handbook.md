@@ -262,35 +262,46 @@ AI 判断当前模型不够用时必须主动提示。
 
 ### 阶段 1：建立地图感（1-2 周）
 
-**目标**：不求甚解地通览 Hermes Agent 和 Claude Code，建立"这个系统在干什么"的粗糙地图。
+**目标**：建立 Hermes Agent 和 Claude Code 的粗糙地图。
+- Hermes Agent：可启动、可交互（实操体验）
+- Claude Code：只读代码、对比架构（不编译、不启动）
 
 **里程碑**：能画出主循环泳道图 + 说出 6 个心智模型的核心。
 
-#### 子阶段 5.1：Hermes Agent 环境初体验
+#### 分组 A：Hermes Agent 可操作体验
+
+##### 子阶段 s1.1：Hermes Agent 环境初体验
 - **问题定义**："我连 Hermes Agent 的使用体感都没有，怎么学它的设计？"
-- **产出物**：`mydocs/architecture/1.1-hermes-first-impression.md`
+- **产出物**：`mydocs/architecture/s1.1-hermes-first-impression.md`
 - **自验证**：
   - [ ] 完成了 3 次以上真实交互
   - [ ] 写下了 3 个意外观察
   - [ ] 写下了 3 个疑问
 
-#### 子阶段 5.2：Claude Code 环境初体验
-- **问题定义**："Claude Code 和 Hermes Agent 有什么异同？"
-- **产出物**：`mydocs/architecture/1.2-claude-first-impression.md`
-- **自验证**：
-  - [ ] 对比了两者的工具系统
-  - [ ] 对比了两者的主循环
-
-#### 子阶段 5.3：画主循环泳道图
-- **问题定义**："用户敲回车到看到回复，系统内部发生了哪些事情？"
-- **产出物**：
-  - `mydocs/architecture/1.3-hermes-main-loop.svg`（Hermes Agent 主循环）
-  - `mydocs/architecture/1.3-claude-main-loop.svg`（Claude Code 主循环）
+##### 子阶段 s1.3：Hermes Agent 主循环泳道图
+- **问题定义**："用户敲回车到看到回复，Hermes Agent 内部发生了哪些事情？"
+- **产出物**：`mydocs/architecture/s1.3-hermes-main-loop.svg`
 - **自验证**：
   - [ ] 泳道图有 6 个泳道
   - [ ] 至少 12 个关键步骤
   - [ ] 能标出 autoCompact 可能触发的 2 个位置
   - [ ] 能口头讲一遍这张图
+
+#### 分组 B：Claude Code 只读代码分析（不编译、不启动）
+
+##### 子阶段 s1.2：Claude Code 代码初读
+- **问题定义**："Claude Code 和 Hermes Agent 有什么异同？（只阅读代码，不启动）"
+- **产出物**：`mydocs/architecture/s1.2-claude-first-impression.md`
+- **自验证**：
+  - [ ] 对比了两者的工具系统（只读代码）
+  - [ ] 对比了两者的主循环（只读代码）
+
+##### 子阶段 s1.4：Claude Code 主循环泳道图
+- **问题定义**："Claude Code 的主循环是怎样的？（基于代码阅读，不启动）"
+- **产出物**：`mydocs/architecture/s1.4-claude-main-loop.svg`
+- **自验证**：
+  - [ ] 泳道图有对应 Claude Code 的泳道
+  - [ ] 能口头讲一遍这张图（基于代码理解）
 
 ---
 
@@ -300,7 +311,7 @@ AI 判断当前模型不够用时必须主动提示。
 
 **里程碑**：能独立讲解 Agent 循环流程 + 开发的 Tool 能在真实场景中运行 + 创建的 Skill 能被正确注入。
 
-#### 子阶段 5.1：Hermes Agent 循环机制（Phase 1）
+#### 子阶段 s2.1：Hermes Agent 循环机制
 - **问题定义**："Agent 循环的核心流程是什么？工具调用如何编排？"
 - **产出物**：完成 `s2.1-agent-loop.md`（含 8 个疑问的解答 + 失败模式分析）
 - **自验证**：
@@ -308,7 +319,7 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] 开发的 Tool 能在真实场景中运行并返回正确结果
   - [ ] 创建的 Skill 能被正确注入并影响 Agent 行为
 
-#### 子阶段 5.2：Hermes Agent 工具系统（Phase 2）
+#### 子阶段 s2.2：Hermes Agent 工具系统
 - **问题定义**："工具如何注册？Schema 如何设计？并发如何调度？"
 - **产出物**：
   - 完成 `s2.4-tool-system.md`
@@ -318,14 +329,14 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] Tool 能被 Agent 调用
   - [ ] 理解 `partitionToolCalls` 算法
 
-#### 子阶段 5.3：Claude Code 工具设计精读
+#### 子阶段 s2.3：Claude Code 工具设计代码分析（只读，不编译不启动）
 - **问题定义**："工业级 Tool 设计有哪些元信息？如何设计 15 维度 Checklist？"
 - **产出物**：`mydocs/architecture/s2.3-claude-tool-design.md`
 - **自验证**：
   - [ ] 能回答"Tool 合约的 4 层分别是什么"
   - [ ] 能为 StarQuant 设计 Tool Checklist
 
-#### 子阶段 5.4：第一个 Tool 和 Skill（CodeStudio 或 StarQuant）
+#### 子阶段 s2.4：第一个 Tool 和 Skill（CodeStudio 或 StarQuant）
 - **问题定义**："如何将领域知识结构化为 Tool 和 Skill？"
 - **产出物**：第一个 Tool + 第一个 Skill
 - **自验证**：
@@ -340,7 +351,7 @@ AI 判断当前模型不够用时必须主动提示。
 
 **里程碑**：工作流能端到端自动化完成领域任务 + Tools 之间有明确的数据流转和错误处理 + 积累 5+ 个 Skills。
 
-#### 子阶段 5.1：CodeStudio 知识工程（CLAUDE.md + Skills + Hooks）
+#### 子阶段 s3.1：CodeStudio 知识工程（CLAUDE.md + Skills + Hooks）
 - **问题定义**："letsgo_server 的 AI 协作从'凭感觉'升级为'有方案'。"
 - **产出物**：
   - CodeStudio v2 方案（`CLAUDE.md` + Skills + Hooks + 鲜度管理）
@@ -349,7 +360,7 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] 用新方案在 letsgo_server 跑通 1 个真实任务
   - [ ] 整体闭环工作
 
-#### 子阶段 5.2：StarQuant Tool 合约与工具盘点
+#### 子阶段 s3.2：StarQuant Tool 合约与工具盘点
 - **问题定义**："StarQuant 的核心业务动作如何从 Python 函数升级为工业级 Tool？"
 - **产出物**：
   - `mydocs/starquant-agent/5.1-tools-inventory.md`
@@ -358,14 +369,14 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] 10 个工具完整填表
   - [ ] 至少 80% 维度有明确答案
 
-#### 子阶段 5.3：工作流设计（CodeStudio 或 StarQuant）
+#### 子阶段 s3.3：工作流设计（CodeStudio 或 StarQuant）
 - **问题定义**："如何设计多步骤自动化工作流？错误处理如何做？"
 - **产出物**：工作流架构图 + 运行演示
 - **自验证**：
   - [ ] 工作流能端到端自动化
   - [ ] Tools 之间有明确的数据流转
 
-#### 子阶段 5.4：知识库构建 + RAG 入门
+#### 子阶段 s3.4：知识库构建 + RAG 入门
 - **问题定义**："如何积累领域知识？如何避免知识过期？RAG 是什么？如何用在 Agent 中？"
 - **RAG 学习时机说明**：
   - **为什么是阶段 3**？你要设计 CodeStudio v2（CLAUDE.md + Skills + Hooks），这时候会自然遇到"如何管理领域知识"的问题，RAG 就是答案
@@ -389,21 +400,21 @@ AI 判断当前模型不够用时必须主动提示。
 
 **里程碑**：多 Agent 系统能协作完成复杂任务 + 提炼出可复用到其他领域的 Agent 设计模式。
 
-#### 子阶段 5.1：CodeStudio Agent 化（可选）
+#### 子阶段 s3.1：CodeStudio Agent 化（可选）
 - **问题定义**："如何将 CodeStudio 从'约束框架'改造为'Agent 系统'？"
 - **产出物**：CodeStudio Agent 架构设计书
 - **自验证**：
   - [ ] 能回答"为什么需要 Agent 化"
   - [ ] 能给出完整架构图
 
-#### 子阶段 5.2：StarQuant Agent 架构设计
+#### 子阶段 s3.2：StarQuant Agent 架构设计
 - **问题定义**："如何将 StarQuant 改造为 Agent 系统？主循环如何设计？"
 - **产出物**：StarQuant Agent 架构设计书（`starquant-agent/README.md`）
 - **自验证**：
   - [ ] 能回答 10 个架构灵魂问题
   - [ ] 能给同行讲 30 分钟
 
-#### 子阶段 5.3：多 Agent 编排
+#### 子阶段 s3.3：多 Agent 编排
 - **问题定义**："StarQuant 用单 Agent 还是多 Agent？如果多，怎么拆分职责？"
 - **产出物**：
   - `mydocs/starquant-agent/5.6-multi-agent.svg`
@@ -412,7 +423,7 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] 架构图完整（Coordinator + 4-5 Worker）
   - [ ] 每个 Worker 工具白名单明确
 
-#### 子阶段 5.4：方法论提炼 + RAG 高级优化
+#### 子阶段 s3.4：方法论提炼 + RAG 高级优化
 - **问题定义**："如何提炼可复用的方法论？如何迁移到其他领域？RAG 如何高级优化？"
 - **RAG 高级优化学习时机说明**：
   - **为什么是阶段 4**？你要设计 StarQuant Agent 架构，量化交易需要大量领域知识（策略模板、风险规则、历史数据），RAG 是核心能力
@@ -435,14 +446,14 @@ AI 判断当前模型不够用时必须主动提示。
 
 **里程碑**：至少一个项目的一个模块真实 Agent 化运行。
 
-#### 子阶段 5.1：CodeStudio 实战迭代
+#### 子阶段 s3.1：CodeStudio 实战迭代
 - **动作清单**：
   - [ ] 在 letsgo_server 做 3 个真实任务，全程使用 v2 方案
   - [ ] 每次任务后按"记录区"格式记录 AI 行为问题
   - [ ] 每周整理问题 → 反哺 CLAUDE.md / Skills / Hooks
 - **产出物**：`mydocs/codestudio-v2/iteration-log.md`
 
-#### 子阶段 5.2：StarQuant 模块改造（建议 backtest 起手）
+#### 子阶段 s3.2：StarQuant 模块改造（建议 backtest 起手）
 - **为什么从 backtest 起手**：
   - 相对独立（不依赖实盘数据源/券商）
   - 产出直观（回测报告可视化）
@@ -454,7 +465,7 @@ AI 判断当前模型不够用时必须主动提示。
   - [ ] 集成到一个最小的 Agent 主循环
   - [ ] 跑通：用户自然语言 → Agent 调 BacktestTool → 结果展示
 
-#### 子阶段 5.3（可选）：两项目互相验证
+#### 子阶段 s2.5（可选）：两项目互相验证
 - [ ] 用 CodeStudio 的 Skills/Hooks 方案来管理 StarQuant 的代码开发
 - [ ] 发现 CodeStudio 方案的普适性问题 → 反哺 v3
 
@@ -729,9 +740,9 @@ Layer 6: 人工层 → 高风险操作人工确认
 ### 7.3 下一步行动
 
 1. **今天**：审阅本文档，提出修改意见
-2. **本周**：完成子阶段 5.1（Hermes Agent 环境初体验）
-3. **下周**：完成子阶段 5.2（Claude Code 环境初体验）
-4. **下下周**：完成子阶段 5.3（画主循环泳道图）
+2. **本周**：完成子阶段 s1.1（Hermes Agent 环境初体验）
+3. **下周**：完成子阶段 s1.2（Claude Code 代码初读）
+4. **下下周**：完成子阶段 s1.3（Hermes 主循环泳道图）和 s1.4（Claude 主循环泳道图）
 
 ---
 
