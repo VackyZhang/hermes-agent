@@ -1,9 +1,7 @@
 # Vacky 的 Hermes Agent 学习空间
 
 > 个人学习和调试 hermes-agent 的笔记与实验空间。  
-> `mydocs/` 已加入 `.gitignore`，所有内容不会被 git 追踪。
->
-> **换机器恢复指南**：见本文档末尾「环境恢复」章节。
+> 本目录随仓库提交，切换环境 `git pull` 即可同步。
 
 ---
 
@@ -122,10 +120,7 @@ hermes logs --level DEBUG | grep vacky
 
 ---
 
-## 环境恢复（换机器/重装系统）
-
-> `mydocs/` 通过 git 追踪，**换机器时 `git pull` 即可恢复**。  
-> 注意：确保 `git add` + `git commit` + `git push` 后再切换环境。
+## 环境搭建（新机器）
 
 ### 1. 克隆仓库并切换分支
 
@@ -168,20 +163,6 @@ OPENAI_API_KEY=sk-your-key-here
 EOF
 ```
 
-### 6. 同步 mydocs 笔记（通过 git）
-
-```bash
-git pull origin vacky/dev
-# 确认同步后的目录结构
-ls mydocs/architecture/
-```
-
-### 7. 验证插件加载
-
-```bash
-python3 -c "from hermes_cli.plugins import discover_plugins; discover_plugins()"
-```
-
 ---
 
 ## 关键命令速查
@@ -219,9 +200,8 @@ python3 -c "from hermes_cli.plugins import discover_plugins; discover_plugins()"
 ## 常见问题
 
 ### Q: mydocs/ 笔记会丢失吗？
-A: `mydocs/` 已 gitignore，**不会随 git 同步**。建议：
-- 使用 iCloud/Dropbox 同步整个 `mydocs/` 目录
-- 或定期 `tar czf mydocs-backup-$(date +%Y%m%d).tar.gz mydocs/`
+A: `mydocs/` 随仓库提交，只要正常 `git push` 就不会丢失。
+换机器后 `git pull` 即可恢复。
 
 ### Q: 如何确认 vacky_debug 插件已加载？
 A: 运行 `VACKY_DEBUG=1 hermes`，然后输入 `/vacky_inspect_state agent`，有输出即成功。
