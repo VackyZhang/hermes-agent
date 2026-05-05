@@ -328,6 +328,96 @@ Sandbox → Dry-run → Checkpoint → Audit Log
 
 ---
 
+#### 3.1.7 知识分类框架重构（基于实践观察）
+
+> **核心洞察**：知识不是均质的，不同类型的知识需要不同的处理方式。
+
+**问题背景**：
+
+在实现 CodeStudio 的过程中，我们发现：
+- ✅ AI 需要知道如何编译和重启 letsgo_server（固定流程）
+- ✅ AI 需要知道如何新增活动类型（需要理解系统设计）
+- ❌ 如果都存为"知识文档"，AI 无法直接执行固定流程（需要先读取文档，再执行步骤）
+- ❌ 如果都封装为 Skill，上下文知识（如"如何新增活动类型"）又不适合自动化（因为需要理解系统设计，做决策）
+
+**知识分类框架（初步）**：
+
+| 知识类型 | 本质 | 示例 | 应该存为 | 触发方式 |
+|---------|------|------|----------|----------|
+| **程序性知识**（Procedural） | 固定流程、可自动化 | 编译、重启、部署 | ✅ **Skill**（代码） | 任务触发 |
+| **上下文知识**（Contextual） | 任务背景、设计思想 | 如何新增活动类型 | ✅ **Knowledge**（文档） | 上下文注入 |
+| **架构性知识**（Architectural） | 系统结构、模块关系 | 项目架构图、依赖关系 | ✅ **Knowledge**（文档） | 会话启动注入 |
+| **经验性知识**（Empirical） | 从实践中学习 | 常见 bug、解决方案 | ✅ **Evidence Chain** | 错误时注入 |
+
+**示例分析**：
+
+##### 示例 1：编译和重启 letsgo_server
+
+**本质**：固定流程，步骤不变，可自动化
+
+**如果存为 Knowledge（文档）**：
+- ❌ AI 需要先读取文档，再执行步骤（效率低）
+- ❌ 文档可能被误读（理解错误）
+- ❌ 无法保证执行一致性（每次可能读漏步骤）
+
+**存为 Skill（代码）**：
+- ✅ AI 直接调用 `compile_and_restart_server()`，无需读取文档
+- ✅ 流程固定，不会出错
+- ✅ 可复用，所有需要编译重启的任务都能用
+
+```python
+# ~/.hermes/skills/letsgo-server/compile_and_restart.py
+def compile_and_restart_server():
+    """编译并重启 letsgo_server"""
+    # 1. 编译
+    run_command("cd /path/to/letsgo_server && make")
+    
+    # 2. 重启
+    run_command("systemctl restart letsgo_server")
+    
+    # 3. 验证
+    check_server_health()
+    
+    return "Server compiled and restarted successfully"
+```
+
+##### 示例 2：在 letsgo_server 中新增活动类型
+
+**本质**：上下文知识，需要理解系统设计、代码结构、设计思想
+
+**如果封装为 Skill**：
+- ❌ "新增活动类型"不是固定流程，而是需要**理解系统设计**后做决策
+- ❌ 每次新增的活动类型可能不同（登录活动、充值活动、对战活动...）
+- ❌ 需要 AI 理解：活动系统的设计模式、数据库表结构、API 接口、前端交互等
+
+**存为 Knowledge（文档）**：
+- ✅ 文档可以详细描述活动系统的设计模式
+- ✅ AI 可以基于文档做决策（而非盲目执行固定流程）
+- ✅ 可以包含示例和最佳实践
+
+```
+knowledge_base/
+├── letsgo_server/
+│   ├── architecture.md          # 系统架构
+│   ├── activity_system.md       # 活动系统设计
+│   ├── how-to-add-activity.md  # 如何新增活动类型
+│   └── common_pitfalls.md      # 常见坑点
+```
+
+**注入时机**：
+- 当用户说"帮我新增一个XX活动"时，注入 `activity_system.md` + `how-to-add-activity.md`
+
+---
+
+**待解决问题**：
+1. ❓ 如何自动识别"程序性知识"和"上下文知识"？（避免人工分类）
+2. ❓ 当知识类型变化时（如某个任务从"需要决策"变为"固定流程"），如何迁移？（Knowledge → Skill）
+3. ❓ 如何保证 Skill 和 Knowledge 的一致性？（如 Skill 更新了，相关 Knowledge 是否也要更新？）
+
+**状态**：📝 初步分析，待实践验证
+
+---
+
 ### 3.2 问题 2：Harness Engineering 模式
 
 **核心思想**：不是直接让 AI 写代码，而是构建一套"工程化框架"（Harness），AI 在框架内工作，框架强制规范、约束、验证。
