@@ -8,7 +8,7 @@
 
 ### 1.1 CCGS Skill（72 个）
 
-> 详见 [`1-2-2-ccgs-skills.md`](1-2-2-ccgs-skills.md)
+> 详见 [`1-2-3-ccgs-skills.md`](1-2-3-ccgs-skills.md)
 
 | 名称 | 分类 | 用户可调用 |
 | ------ | ------ | ------------- |
@@ -31,7 +31,7 @@
 
 ### 1.2 Hermes Skill（内置 + 可选）
 
-> 详见 [`1-3-4-hermes-skill-system.md`](1-3-4-hermes-skill-system.md)
+> 详见 [`1-3-5-hermes-skill-system.md`](1-3-5-hermes-skill-system.md)
 
 | 名称 | 来源 | 描述 |
 | ------ | ------ | ------ |
@@ -48,7 +48,7 @@
 
 ### 1.3 Claude Code Skill（内置）
 
-> 详见 [`1-4-4-claude-code-skill-system.md`](1-4-4-claude-code-skill-system.md)
+> 详见 [`1-4-7-claude-code-skill-system.md`](1-4-7-claude-code-skill-system.md)
 
 | 名称 | 来源 | 描述 |
 | ------ | ------ | ------ |
@@ -64,7 +64,7 @@
 
 ### 1.4 mugc_tools Skill（69 个）
 
-> 详见 [`1-5-4-mugc-tools-skills.md`](1-5-4-mugc-tools-skills.md)
+> 详见 [`1-5-5-mugc-tools-skills.md`](1-5-5-mugc-tools-skills.md)
 
 | 分类 | 数量 | 示例 |
 | ------ | ------ | ------ |
@@ -107,7 +107,7 @@
 
 ### 2.1 Hermes Tool（50 个，分 8 类）
 
-> 详见 [`1-3-2-hermes-tool-system.md`](1-3-2-hermes-tool-system.md)
+> 详见 [`1-3-3-hermes-tool-system.md`](1-3-3-hermes-tool-system.md)
 
 | 分类 | 数量 | 示例 |
 | ------ | ------ | ------ |
@@ -126,7 +126,7 @@
 
 ### 2.2 mugc_tools Command（58 个）
 
-> 详见 [`1-5-3-mugc-tools-commands.md`](1-5-3-mugc-tools-commands.md)
+> 详见 [`1-5-4-mugc-tools-commands.md`](1-5-4-mugc-tools-commands.md)
 
 | 分类 | 数量 | 示例 |
 | ------ | ------ | ------ |
@@ -147,7 +147,7 @@
 
 ### 3.1 CCGS Hook（12 个）
 
-> 详见 [`1-2-3-ccgs-hooks.md`](1-2-3-ccgs-hooks.md)
+> 详见 [`1-2-4-ccgs-hooks.md`](1-2-4-ccgs-hooks.md)
 
 | 类型 | 数量 | 示例 |
 | ------ | ------ | ------ |
@@ -162,7 +162,7 @@
 
 ### 3.2 Hermes Hook（14 种事件）
 
-> 详见 [`1-3-3-hermes-hook-system.md`](1-3-3-hermes-hook-system.md)
+> 详见 [`1-3-4-hermes-hook-system.md`](1-3-4-hermes-hook-system.md)
 
 | 事件 | 触发时机 | 典型用途 |
 | ------ | ---------- | ---------- |
@@ -178,7 +178,7 @@
 
 ### 3.3 Claude Code Hook（27 种事件）
 
-> 详见 [`1-4-1-claude-code-hooks.md`](1-4-1-claude-code-hooks.md)
+> 详见 [`1-4-3-claude-code-hooks.md`](1-4-3-claude-code-hooks.md)
 
 | 事件 | 触发时机 | 典型用途 |
 | ------ | ---------- | ---------- |
@@ -196,7 +196,7 @@
 
 ### 4.1 CCGS Rules（3 条）
 
-> 详见 [`1-2-4-ccgs-rules.md`](1-2-4-ccgs-rules.md)
+> 详见 [`1-2-5-ccgs-rules.md`](1-2-5-ccgs-rules.md)
 
 | 名称 | 适用路径 | 规则内容 |
 | ------ | ---------- | ---------- |
@@ -210,7 +210,7 @@
 
 ### 4.2 mugc_tools Rules（8 条）
 
-> 详见 [`1-5-5-mugc-tools-rules.md`](1-5-5-mugc-tools-rules.md)
+> 详见 [`1-5-6-mugc-tools-rules.md`](1-5-6-mugc-tools-rules.md)
 
 | 名称 | 适用路径 | 规则内容 |
 | ------ | ---------- | ---------- |
@@ -234,10 +234,10 @@
 
 ### 5.2 按文档查找
 
-- **CCGS 相关**：[`1-2-ccgs-analysis.md`](1-2-ccgs-analysis.md)
-- **Hermes 相关**：[`1-3-hermes-analysis.md`](1-3-hermes-analysis.md)
-- **Claude Code 相关**：[`1-4-claude-code-analysis.md`](1-4-claude-code-analysis.md)
-- **mugc_tools 相关**：[`1-5-mugc-tools-analysis.md`](1-5-mugc-tools-analysis.md)
+- **CCGS 相关**：[`1-2-1-ccgs-analysis.md`](1-2-1-ccgs-analysis.md)
+- **Hermes 相关**：[`1-3-1-hermes-analysis.md`](1-3-1-hermes-analysis.md)
+- **Claude Code 相关**：[`1-4-1-claude-code-analysis.md`](1-4-1-claude-code-analysis.md)
+- **mugc_tools 相关**：[`1-5-1-mugc-tools-analysis.md`](1-5-1-mugc-tools-analysis.md)
 
 ---
 
