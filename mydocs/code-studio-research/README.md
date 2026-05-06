@@ -79,6 +79,7 @@ CodeStudio 相关研究文档，包括：
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
 | `2-1-synthesis-and-design.md` | ✅ 已完成 | CodeStudio 综合设计方案 |
+| `2-2-codestudio-gap-analysis-and-next-steps.md` | ✅ 已完成 | CodeStudio 差距分析与后续方案 |
 
 ### 四、实践验证
 
