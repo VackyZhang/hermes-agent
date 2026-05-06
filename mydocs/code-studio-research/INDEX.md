@@ -83,6 +83,20 @@
 
 ---
 
+### 1.5 Matt Pocock Skills（12 个核心 Skills）
+
+> 详见 [`1-6-matt-pocock-skills-analysis.md`](1-6-matt-pocock-skills-analysis.md)
+
+| 分类 | 数量 | 示例 |
+| ------ | ------ | ------ |
+| Engineering Skills | 9 | `diagnose`, `grill-with-docs`, `tdd`, `to-prd`, `improve-codebase-architecture` |
+| Productivity Skills | 3 | `grill-me`, `caveman`, `write-a-skill` |
+| Misc Skills | 4 | `git-guardrails-claude-code`, `setup-pre-commit` |
+
+**统计**：12 个核心 Skills（小而美，可组合）。
+
+---
+
 ## 二、Tool 索引
 
 ### 2.1 Hermes Tool（50 个，分 8 类）
