@@ -20,7 +20,7 @@ CodeStudio 相关研究文档，包括：
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `1-1-code-studio-analysis.md` | ✅ 已完成 | CodeStudio 架构总览 |
+| `1-1-1-code-studio-analysis.md` | ✅ 已完成 | CodeStudio 架构总览 |
 | `1-1-2-codestudio-architecture.md` | ✅ 已完成 | N+M 架构详解 |
 | `1-1-3-codestudio-gd-governance.md` | ✅ 已完成 | GD-2 治理详解 |
 | `1-1-4-codestudio-evidence-chain.md` | ✅ 已完成 | Evidence Chain 详解 |
@@ -58,9 +58,9 @@ CodeStudio 相关研究文档，包括：
 | `1-4-1-claude-code-analysis.md` | ✅ 已完成 | Claude Code 架构总览 |
 | `1-4-3-claude-code-hooks.md` | ✅ 已完成 | Hook 系统详解（27 种事件） |
 | `1-4-5-claude-code-tool-system.md` | ✅ 已完成 | 工具系统详解 |
-| `1-4-3-claude-code-hook-system.md` | ✅ 已完成 | Hook 系统详解 |
-| `1-4-4-claude-code-skill-system.md` | ✅ 已完成 | Skill 系统详解 |
-| `1-4-5-claude-code-summary.md` | ✅ 已完成 | 总结与对比 |
+| `1-4-6-claude-code-hook-system.md` | ✅ 已完成 | Hook 系统详解 |
+| `1-4-7-claude-code-skill-system.md` | ✅ 已完成 | Skill 系统详解 |
+| `1-4-8-claude-code-summary.md` | ✅ 已完成 | 总结与对比 |
 
 #### 2.5 mugc_tools（ mugc_server_ai_tools）
 

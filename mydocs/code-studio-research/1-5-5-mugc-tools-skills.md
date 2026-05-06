@@ -34,16 +34,13 @@ whenToUse: When to use this skill
 argumentHint: [arg1] [arg2]
 ---
 
-# Skill Name #
-
-## Workflow #
-
+# Skill Name
+## Workflow
 1. Step1
 2. Step2
 3. ...
 
-## Output Format #
-
+## Output Format
 ...
 ```
 

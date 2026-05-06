@@ -1,11 +1,9 @@
-# Claude Code Hook 系统详解 #
-
+# Claude Code Hook 系统详解
 > **文档定位**：深入 Claude Code 的 CLI Hook 系统（4 种类型、27 种事件）。
 
 ---
 
-## 一、CLI Hook 系统概述 ##
-
+## 一、CLI Hook 系统概述
 > **⚠️ 注意**：Claude Code 的 `hooks/` 目录是 React Hooks（UI），**不是** CLI Hook 系统！
 
 **CLI Hook 系统位置**：
@@ -21,8 +19,7 @@
 
 ---
 
-## 二、Hook 类型（4 种） ##
-
+## 二、Hook 类型（4 种）
 | Hook 类型 | 说明 | 触发时机 |
 | ----------- | ------ | ---------- |
 | **command** | 执行 shell 命令 | 工具调用前后 |
@@ -30,8 +27,7 @@
 | **http** | HTTP 请求 | 需要远程调用时 |
 | **agent** | 子 Agent 验证 | 需要复杂验证时 |
 
-### 2.1 command 类型 ###
-
+### 2.1 command 类型
 **说明**：执行 shell 命令。
 
 **示例配置**：
@@ -51,8 +47,7 @@
 }
 ```text
 
-### 2.2 prompt 类型 ###
-
+### 2.2 prompt 类型
 **说明**：LLM 评估。
 
 **示例配置**：
@@ -72,8 +67,7 @@
 }
 ```text
 
-### 2.3 http 类型 ###
-
+### 2.3 http 类型
 **说明**：HTTP 请求。
 
 **示例配置**：
@@ -97,8 +91,7 @@
 }
 ```text
 
-### 2.4 agent 类型 ###
-
+### 2.4 agent 类型
 **说明**：子 Agent 验证。
 
 **示例配置**：
@@ -120,8 +113,7 @@
 
 ---
 
-## 三、Hook 事件（27 种） ##
-
+## 三、Hook 事件（27 种）
 > **⚠️ 注意**：实际源代码中定义了 **27 种事件**（不是 13 种），以下表格列出所有事件。
 
 | 事件名 | 触发时机 | 典型用途 |
@@ -158,8 +150,7 @@
 
 ---
 
-## 四、Hook 配置位置 ##
-
+## 四、Hook 配置位置
 | 层级 | 文件路径 | 说明 |
 | ------ | ---------- | ------ |
 | 用户级 | `~/.claude/settings.json` | 全局配置，对所有项目生效 |
@@ -168,8 +159,7 @@
 
 ---
 
-## 五、Hook 输出协议 ##
-
+## 五、Hook 输出协议
 所有 Hook 类型都支持以下核心字段（语义一致）：
 
 | 字段 | 说明 | 适用事件 |
@@ -212,10 +202,8 @@
 
 ---
 
-## 六、与 CodeStudio/Hermes Agent 的对比 ##
-
-### 6.1 与 CodeStudio 的对比 ###
-
+## 六、与 CodeStudio/Hermes Agent 的对比
+### 6.1 与 CodeStudio 的对比
 | 维度 | Claude Code | CodeStudio |
 | ------ | ------------- | ------------ |
 | **Hook 实现** | TypeScript 函数（utils/hooks.ts） | Python 函数（CAP-4 Interceptor） |
@@ -224,8 +212,7 @@
 | **Hook 配置** | .claude/settings.json | catalog/constraints/ + MCP 工具 |
 | **治理导向** | ❌ 无（Hook 是工具） | ✅ 有（CAP-4 Interceptor 是治理导向） |
 
-### 6.2 与 Hermes Agent 的对比 ###
-
+### 6.2 与 Hermes Agent 的对比
 | 维度 | Claude Code | Hermes Agent |
 | ------ | ------------- | -------------- |
 | **Hook 实现** | TypeScript 函数（utils/hooks.ts） | Python 函数 |

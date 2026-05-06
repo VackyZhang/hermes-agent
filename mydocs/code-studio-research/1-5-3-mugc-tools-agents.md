@@ -1,11 +1,9 @@
-# mugc_tools Agent 系统详解 #
-
+# mugc_tools Agent 系统详解
 > **文档定位**：深入 mugc_server_ai_tools 的 Agent 系统（11 个）。
 
 ---
 
-## 一、Agent 系统概述 ##
-
+## 一、Agent 系统概述
 mugc_server_ai_tools 包含 **11 个 Agent** 定义，存放在 `agents/` 目录。
 
 **核心设计理念**：
@@ -16,8 +14,7 @@ mugc_server_ai_tools 包含 **11 个 Agent** 定义，存放在 `agents/` 目录
 
 ---
 
-## 二、Agent 定义格式 ##
-
+## 二、Agent 定义格式
 ```markdown
 ---
 name: architect
@@ -40,8 +37,7 @@ You are a senior software architect...
 
 ---
 
-## 三、Agent 列表（11 个） ##
-
+## 三、Agent 列表（11 个）
 | Agent 名称 | 模型 | 主要职责 |
 | ----------- | ------ | ---------- |
 | `architect` | opus | 软件架构师，系统设计、技术决策 |
@@ -67,8 +63,7 @@ You are a senior software architect...
 
 ---
 
-## 四、Agent 部署 ##
-
+## 四、Agent 部署
 **部署方式**：通过 `install/` 脚本，将 `agents/` 链接到对应工具的配置目录。
 
 **部署路径**：

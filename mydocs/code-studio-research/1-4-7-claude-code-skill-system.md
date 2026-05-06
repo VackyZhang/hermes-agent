@@ -1,11 +1,9 @@
-# Claude Code Skill 系统详解 #
-
+# Claude Code Skill 系统详解
 > **文档定位**：深入 Claude Code 的 Skill 系统（3 种来源、14 个内置 Skill）。
 
 ---
 
-## 一、Skill 系统概述 ##
-
+## 一、Skill 系统概述
 Claude Code 的 Skill 系统在 `skills/` 目录中实现。
 
 **核心设计理念**：
@@ -16,10 +14,8 @@ Claude Code 的 Skill 系统在 `skills/` 目录中实现。
 
 ---
 
-## 二、Skill 来源（3 种） ##
-
-### 2.1 bundled（内置 Skill） ###
-
+## 二、Skill 来源（3 种）
+### 2.1 bundled（内置 Skill）
 **说明**：Claude Code 内置的 Skill，在 `skills/bundledSkills.ts` 中注册。
 
 **注册示例**：
@@ -48,8 +44,7 @@ export function registerAllBundledSkills() {
 }
 ```text
 
-### 2.2 user-defined（用户定义 Skill） ###
-
+### 2.2 user-defined（用户定义 Skill）
 **说明**：用户定义的 Skill，存放在 `.claude/commands/` 目录，Markdown 文件。
 
 **示例**：
@@ -72,8 +67,7 @@ export function registerAllBundledSkills() {
 ...
 ```text
 
-### 2.3 plugin（插件 Skill） ###
-
+### 2.3 plugin（插件 Skill）
 **说明**：插件定义的 Skill，插件在初始化时调用 `registerPluginSkill()` 注册。
 
 **注册示例**：
@@ -94,8 +88,7 @@ export function activate(context: PluginContext) {
 
 ---
 
-## 三、Skill Frontmatter（元数据） ##
-
+## 三、Skill Frontmatter（元数据）
 | 字段 | 类型 | 说明 |
 | ------ | ------ | ------ |
 | `name` | string | Skill 名称（必须唯一） |
@@ -113,10 +106,8 @@ export function activate(context: PluginContext) {
 
 ---
 
-## 四、Skill 触发方式（3 种） ##
-
-### 4.1 slash 命令 ###
-
+## 四、Skill 触发方式（3 种）
+### 4.1 slash 命令
 **触发方式**：用户通过 `/skill-name` 手动触发。
 
 **示例**：
@@ -125,8 +116,7 @@ export function activate(context: PluginContext) {
 User: /debug "login failed"
 ```text
 
-### 4.2 LLM 自动选择 ###
-
+### 4.2 LLM 自动选择
 **触发方式**：当 Skill 的 `whenToUse` 匹配时，LLM 自动调用 Skill。
 
 **示例**：
@@ -136,8 +126,7 @@ User: Can you review my code?
 → Claude Code 自动调用 /review Skill
 ```text
 
-### 4.3 Hook 触发 ###
-
+### 4.3 Hook 触发
 **触发方式**：通过 Hook 系统触发 Skill（例如，`PostToolUse` Hook 触发 `verify` Skill）。
 
 **示例**：
@@ -149,8 +138,7 @@ PostToolUse Hook 调用 type: "agent" 触发子 Agent 验证
 
 ---
 
-## 五、内置 Skill 列表（14 个） ##
-
+## 五、内置 Skill 列表（14 个）
 | Skill 名称 | 说明 | 触发命令 |
 | ----------- | ------ | ---------- |
 | `batch` | 批量处理文件 | `/batch` |
@@ -170,10 +158,8 @@ PostToolUse Hook 调用 type: "agent" 触发子 Agent 验证
 
 ---
 
-## 六、与 CCGS/Hermes Agent 的对比 ##
-
-### 6.1 与 CCGS 的对比 ###
-
+## 六、与 CCGS/Hermes Agent 的对比
+### 6.1 与 CCGS 的对比
 | 维度 | CCGS | Claude Code |
 | ------ | ------- | ------------- |
 | **Skill 定义** | Markdown 文件（.claude/skills/*.md） | TypeScript 函数（skills/*.ts） |
@@ -181,8 +167,7 @@ PostToolUse Hook 调用 type: "agent" 触发子 Agent 验证
 | **Skill 执行** | Claude Code 内置执行器 | TypeScript 函数调用 |
 | **Skill 来源** | 用户定义（.claude/commands/） | bundled / user-defined / plugin |
 
-### 6.2 与 Hermes Agent 的对比 ###
-
+### 6.2 与 Hermes Agent 的对比
 | 维度 | Claude Code | Hermes Agent |
 | ------ | ------------- | -------------- |
 | **Skill 定义** | TypeScript 函数（skills/*.ts） | Markdown 文件（skills/<name>/SKILL.md） |

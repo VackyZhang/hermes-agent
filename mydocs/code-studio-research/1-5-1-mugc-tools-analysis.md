@@ -1,4 +1,4 @@
-# mugc_server_ai_tools 分析 #
+# mugc_server_ai_tools 分析
 
 > **文档定位**：梳理 mugc_server_ai_tools 的设计、实现、亮点，对比 CodeStudio，并针对 `0-problems-and-goals.md` 中的问题提出解决思路。
 >
@@ -15,7 +15,7 @@
 
 ---
 
-## 一、一句话总结 ##
+## 一、一句话总结
 
 mugc_server_ai_tools 是一个为**多种 AI 编码助手**提供 `rules`、`commands`、`skills` 和 `openspec` 元数据的**工具仓库**。支持 CodeBuddy、Claude Code、Gemini CLI、Codex、Cursor 等工具。
 
@@ -31,9 +31,9 @@ mugc_server_ai_tools 是一个为**多种 AI 编码助手**提供 `rules`、`com
 
 ---
 
-## 二、核心设计概览 ##
+## 二、核心设计概览
 
-### 2.1 整体架构 ###
+### 2.1 整体架构
 
 ```text
 mugc_server_ai_tools/
@@ -58,8 +58,7 @@ mugc_server_ai_tools/
 
 **深入细节** → 详见 `1-5-2-mugc-tools-architecture.md`
 
-### 2.2 Agent 系统（11 个） ###
-
+### 2.2 Agent 系统（11 个）
 **Agent 定义格式**（YAML front matter + Markdown）：
 
 ```markdown
@@ -100,8 +99,7 @@ You are a senior software architect...
 
 **深入细节** → 详见 `1-5-3-mugc-tools-agents.md`
 
-### 2.3 Command 系统（19 个） ###
-
+### 2.3 Command 系统（19 个）
 **Command 定义格式**（Markdown 文件）：
 
 - 文件路径：`commands/<command-name>.md`
@@ -136,8 +134,7 @@ You are a senior software architect...
 
 **深入细节** → 详见 `1-5-4-mugc-tools-commands.md`
 
-### 2.4 Skill 系统（22 个模块，387 个文件） ###
-
+### 2.4 Skill 系统（22 个模块，387 个文件）
 **Skill 结构约定**（统一结构）：
 
 ```text
@@ -165,8 +162,7 @@ skills/<skill-name>/
 
 **深入细节** → 详见 `1-5-5-mugc-tools-skills.md`
 
-### 2.5 Rules 系统（.mdc 文件） ###
-
+### 2.5 Rules 系统（.mdc 文件）
 **Rules 格式**（CodeBuddy 规则，`.mdc` 文件）：
 
 ```markdown
@@ -197,8 +193,7 @@ Rule content...
 
 **深入细节** → 详见 `1-5-6-mugc-tools-rules.md`
 
-### 2.6 OpenSpec 元数据（openspec/ 目录） ###
-
+### 2.6 OpenSpec 元数据（openspec/ 目录）
 **OpenSpec 设计**：
 
 - **目标**：提供从需求探索 → 提案 → 设计 → 实现 → 验证 → 归档的完整变更管理流程
@@ -235,8 +230,7 @@ Rule content...
 
 ---
 
-## 三、亮点与创新 ##
-
+## 三、亮点与创新
 | 亮点 | 说明 | 相对 CCGS/Claude Code 的优势 |
 | ------ | ------ | ---------------------------------- |
 | **① 多工具支持** | 通过 symlink 部署模型，支持 5 种 AI 工具 | CCGS/Claude Code 只支持 Claude Code |
@@ -247,8 +241,7 @@ Rule content...
 
 ---
 
-## 四、当前状态（2026-05） ##
-
+## 四、当前状态（2026-05）
 | 维度 | 完成度 | 说明 |
 | ------ | -------- | ------ |
 | **多工具支持** | ✅ 完成 | 支持 5 种 AI 工具（CodeBuddy、Claude Code、Gemini、Codex、Cursor） |
@@ -261,10 +254,8 @@ Rule content...
 
 ---
 
-## 五、与 CodeStudio 的对比 ##
-
-### 5.1 定位对比 ###
-
+## 五、与 CodeStudio 的对比
+### 5.1 定位对比
 | 维度 | mugc_tools | CodeStudio | CodeStudio 的优势 |
 | ------ | -------------- | ------------ | ------------------- |
 | **定位** | 工具仓库（rules/commands/skills/openspec） | Agent Harness 框架（治理 Agent 行为） | CodeStudio 更通用，不绑定特定领域 |
@@ -275,10 +266,8 @@ Rule content...
 
 ---
 
-## 六、针对 0- 中的问题的解决方案 ##
-
-### 6.1 Q1：知识复用效率低 ###
-
+## 六、针对 0- 中的问题的解决方案
+### 6.1 Q1：知识复用效率低
 **mugc_tools 的解决方案**：
 
 | 机制 | 说明 | 状态 |
@@ -303,8 +292,7 @@ Rule content...
 
 3. **改进**：实现证据链闭环（系统化学习）
 
-### 6.2 Q2：流程确认依赖人工 ###
-
+### 6.2 Q2：流程确认依赖人工
 **mugc_tools 的解决方案**：
 
 | 机制 | 说明 | 不足 |
@@ -328,8 +316,7 @@ Rule content...
 
 3. **改进**：将 OpenSpec 工作流形式化为 GD-2 组织资产
 
-### 6.3 Q3：知识格式不清晰 ###
-
+### 6.3 Q3：知识格式不清晰
 **mugc_tools 的解决方案**：
 
 | 知识类型 | 格式 | 示例 |
@@ -363,8 +350,7 @@ Rule content...
 
 3. **改进**：定义结构化的知识格式（JSON Schema）
 
-### 6.4 Q4：缺乏系统性学习 ###
-
+### 6.4 Q4：缺乏系统性学习
 **mugc_tools 的解决方案**：
 
 | 机制 | 说明 | 状态 |
@@ -385,8 +371,7 @@ Rule content...
 
 2. **实现**：`catalog/` 目录结构（结构化知识管理）
 
-### 6.5 Q5：实践验证不足 ###
-
+### 6.5 Q5：实践验证不足
 **mugc_tools 的解决方案**：
 
 | 机制 | 说明 | 状态 |
@@ -409,10 +394,8 @@ Rule content...
 
 ---
 
-## 七、总结与下一步 ##
-
-### 7.1 核心结论 ###
-
+## 七、总结与下一步
+### 7.1 核心结论
 1. **mugc_server_ai_tools 是多工具知识仓库**：通过 Symlink 部署模型，支持 5 种 AI 工具，提供集中管理的 rules/commands/skills/openspec
 
 2. **mugc_tools 的亮点**：多工具支持、强制规则机制、OpenSpec 工作流、Symlink 部署模型
@@ -421,8 +404,7 @@ Rule content...
 
 4. **CodeStudio 可以改进的方向**：在 mugc_tools 的基础上，增加治理层（CAP-2 Enforcer、证据链闭环、GD+CC 双轴治理、统一 Hook 系统、知识进化机制）
 
-### 7.2 下一步 ###
-
+### 7.2 下一步
 | 任务 | 优先级 | 预计时间 |
 | ------ | -------- | --------- |
 | **① 整合 mugc_tools 的亮点** | P0 | 1-2 周 |
