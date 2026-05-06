@@ -74,6 +74,7 @@
 | **Hermes Agent** | 学习 Agent 循环、Tool/Hook/Skill/Memory 系统 | - Agent 循环如何工作？- Tool 如何注册和执行？- Hook 生命周期？- Memory 插件如何工作？ | `1-3-x` 系列（6 个文档） | ✅ 已完成 |
 | **Claude Code CLI** | 学习底层 Agent/Tool/Hook/Skill 实现 | - Agent 系统如何设计？- Tool 如何注册和执行？- Hook 的生命周期？- Skill 如何注入？ | `1-4-x` 系列（7 个文档） | ✅ 已完成 |
 | **mugc_server_ai_tools** | 学习 letsgo_server 的 AI 实践 | - 如何组织"服务器开发"的知识？- 有哪些独特设计？- OpenSpec 如何工作？ | `1-5-x` 系列（7 个文档） | ✅ 已完成 |
+| **Matt Pocock Skills** | 学习开源 Skills 设计理念 | - Skills 如何组织？- 如何设计可复用的 AI 工作流？- 与 CodeStudio 的关系？ | `1-6-x` 系列（4 个文档） | ✅ 已完成 |
 
 ### 3.2 每个代码库的具体学习问题
 
@@ -127,6 +128,25 @@
 - ⏳ mugc_tools 的性能如何？（Tool 调用延迟、上下文压缩效率）
 
 **详细分析**：见 `1-5-x` 系列文档。
+
+---
+
+#### Matt Pocock Skills（✅ 已完成）
+
+**已回答的问题**：
+
+- ✅ Skills 如何组织？（仓库结构 + 分类体系）
+- ✅ 如何设计可复用的 AI 工作流？（7 个核心 Skills 详解）
+- ✅ Skill 与 CodeStudio 的关系？（对比分析 + 可借鉴设计）
+- ✅ 如何注入上下文？（SKILL.md + docs/agents/）
+- ✅ 如何设计渐进式工作流？（TDD、diagnose、grill-with-docs）
+
+**未完成的问题**（可能需要深入研究）：
+
+- ⏳ Matt Pocock Skills 在实际项目中效果如何？（缺乏用户反馈数据）
+- ⏳ 如何大规模推广 Skills？（Skill 发现和分发机制）
+
+**详细分析**：见 `1-6-x` 系列文档。
 
 ---
 
