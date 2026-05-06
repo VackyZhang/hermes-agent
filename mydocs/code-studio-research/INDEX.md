@@ -85,7 +85,7 @@
 
 ### 1.5 Matt Pocock Skills（12 个核心 Skills）
 
-> 详见 [`1-6-matt-pocock-skills-analysis.md`](1-6-matt-pocock-skills-analysis.md)
+> 详见：[`1-6-matt-pocock-skills-analysis.md`](1-6-matt-pocock-skills-analysis.md)（已拆分为 1-6-1 ~ 1-6-4）
 
 | 分类 | 数量 | 示例 |
 | ------ | ------ | ------ |
@@ -94,6 +94,12 @@
 | Misc Skills | 4 | `git-guardrails-claude-code`, `setup-pre-commit` |
 
 **统计**：12 个核心 Skills（小而美，可组合）。
+
+**子文档**：
+- [1-6-1 概述与结构](./1-6-1-matt-pocock-skills-overview-and-structure.md)
+- [1-6-2 核心 Skills 深度分析](./1-6-2-matt-pocock-skills-deep-dive.md)
+- [1-6-3 对比与洞察](./1-6-3-matt-pocock-skills-vs-codestudio.md)
+- [1-6-4 行动建议](./1-6-4-matt-pocock-skills-action-plan.md)
 
 ---
 
