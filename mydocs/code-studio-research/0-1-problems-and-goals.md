@@ -55,7 +55,7 @@
 
 | 阶段 | 目标 | 成功标准 | 状态 |
 | ------ | ------ | --------- | ------ |
-| **阶段 1**（分析学习） | 系统性分析 CodeStudio、CCGS、Claude Code、mugc_tools、Hermes Agent | 完成 `1-1-x`、`1-2-x`、`1-3-x`、`1-4-x`、`1-5-x` 分析文档 | ✅ 已完成 |
+| **阶段 1**（分析学习） | 系统性分析 CodeStudio、CCGS、Claude Code、mugc_tools、Hermes Agent、Matt Pocock Skills | 完成 `1-1-x`、`1-2-x`、`1-3-x`、`1-4-x`、`1-5-x`、`1-6-x` 分析文档 | ✅ 已完成 |
 | **阶段 2**（实践验证） | 在 `letsgo_server` 上做 2-3 个真实任务，记录 AI 卡点 | 完成 `2-1-practice-round1.md`、`2-2-practice-round2.md`、`2-3-practice-round3.md` | ⏳ 待开始 |
 | **阶段 3**（设计） | 基于前两个阶段，输出 CodeStudio 设计方案 | 完成 `3-synthesis-and-design.md` | ⏳ 待开始 |
 | **阶段 4**（实现） | 实现 CodeStudio 的核心功能（知识系统、流程确认） | 可运行的原型 | ⏳ 待开始 |
