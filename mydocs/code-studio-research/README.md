@@ -74,20 +74,25 @@ CodeStudio 相关研究文档，包括：
 | `1-5-6-mugc-tools-rules.md` | ✅ 已完成 | Rules 系统详解 |
 | `1-5-7-mugc-tools-openspec.md` | ✅ 已完成 | OpenSpec 详解 |
 
-### 三、实践记录
+### 三、方案设计
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `2-1-practice-round1.md` | 📝 待写 | 第一轮实践记录 |
-| `2-2-practice-round2.md` | 📝 待写 | 第二轮实践记录 |
-| `2-3-practice-round3.md` | 📝 待写 | 第三轮实践记录 |
-| `4-practice-learnings.md` | 📝 待写 | 实践学习总结 |
+| `2-1-synthesis-and-design.md` | ✅ 已完成 | CodeStudio 综合设计方案 |
 
-### 四、综合设计
+### 四、实践验证
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `3-synthesis-and-design.md` | 📝 待写 | 综合对比 + CodeStudio 设计 |
+| `3-1-practice-round1.md` | 📝 待写 | 第一轮实践记录 |
+| `3-2-practice-round2.md` | 📝 待写 | 第二轮实践记录 |
+| `3-3-practice-round3.md` | 📝 待写 | 第三轮实践记录 |
+
+### 五、实践学习
+
+| 文档 | 状态 | 内容 |
+| ------ | ------ | ------ |
+| `4-1-practice-learnings.md` | 📝 待写 | 实践学习总结 |
 
 ## 研究目标
 

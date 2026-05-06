@@ -442,7 +442,7 @@ Host LLM 收到 CLAUDE.md 指令
 
 - [ ] 启动 letsgo_server 实证（第一个真实任务）
 
-- [ ] 记录 AI 的卡点（更新 `2-1-practice-round1.md`）
+- [ ] 记录 AI 的卡点（更新 `3-1-practice-round1.md`）
 
 - [ ] 基于实践反馈，迭代 CodeStudio 设计
 

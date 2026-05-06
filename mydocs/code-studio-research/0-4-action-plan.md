@@ -22,10 +22,10 @@
 
 ## 二、短期计划（本月）
 
-- [ ] 完成 `2-1-practice-round1.md`（实践验证 Round 1）
-- [ ] 完成 `2-2-practice-round2.md`（实践验证 Round 2）
-- [ ] 完成 `2-3-practice-round3.md`（实践验证 Round 3）
-- [ ] 完成 `3-synthesis-and-design.md`（综合设计）
+- [x] 完成 `2-1-synthesis-and-design.md`（综合设计）
+- [ ] 完成 `3-1-practice-round1.md`（实践验证 Round 1）
+- [ ] 完成 `3-2-practice-round2.md`（实践验证 Round 2）
+- [ ] 完成 `3-3-practice-round3.md`（实践验证 Round 3）
 - [ ] 完成 `4-knowledge-lifecycle-design.md`（知识全生命周期管理设计）
 - [ ] 完成 `5-harness-engineering-design.md`（Harness Engineering 框架设计）
 - [ ] 完成 `6-system-thinking-injection-design.md`（系统思维注入机制设计）
