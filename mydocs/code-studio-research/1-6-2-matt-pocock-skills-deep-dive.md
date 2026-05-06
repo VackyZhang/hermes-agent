@@ -135,8 +135,8 @@ RED→GREEN: test3→impl3
 1. **Planning**（规划）：
    - 确认接口变更
    - 确认要测试的行为（优先级）
-   - 寻找[深模块](deep-modules.md)机会
-   - 为[可测试性](interface-design.md)设计接口
+   - 寻找深模块机会（参考：[Deep Modules](https://en.wikipedia.org/wiki/Information_hiding) 设计原则）
+   - 为可测试性设计接口（参考：[Interface Design](https://en.wikipedia.org/wiki/Interface_(computing)) 设计原则）
    - **你不能测试所有东西** → 和用户确认哪些行为最重要
 
 2. **Tracer Bullet**（追踪子弹）：
@@ -149,7 +149,7 @@ RED→GREEN: test3→impl3
    - 不要预测未来测试
 
 4. **Refactor**（重构）：
-   - 所有测试通过后，寻找[重构机会](refactoring.md)
+   - 所有测试通过后，寻找重构机会（参考：[Refactoring Techniques](https://refactoring.guru/refactoring/techniques)）
    - **永远不要在 RED 时重构** → 先到 GREEN
 
 ---
@@ -591,7 +591,7 @@ description: Brief description of capability. Use when [specific triggers].
 
 ## Advanced features
 
-[Link to separate files: See [REFERENCE.md](REFERENCE.md)]
+[Link to separate files: See `REFERENCE.md`]
 ```
 
 ---
@@ -662,11 +662,11 @@ Scripts 节省 tokens 并提高可靠性（vs 生成的代码）。
 
 根据要回答的问题选择分支：
 
-1. **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md)
+1. **"Does this logic / state model feel right?"** → `LOGIC.md`
    - 构建一个小型交互式终端应用
    - 将状态机推送到难以在纸上推理的案例
 
-2. **"What should this look like?"** → [UI.md](UI.md)
+2. **"What should this look like?"** → `UI.md`
    - 在单个路由上生成几个完全不同的 UI 变体
    - 可通过 URL 搜索参数和可浮动底部栏切换
 
@@ -800,11 +800,11 @@ Scripts 节省 tokens 并提高可靠性（vs 生成的代码）。
    ```
 
    - 然后使用此 skill 文件夹中的种子模板写入三个 docs 文件：
-     - [issue-tracker-github.md](./issue-tracker-github.md) — GitHub issue tracker
-     - [issue-tracker-gitlab.md](./issue-tracker-gitlab.md) — GitLab issue tracker
-     - [issue-tracker-local.md](./issue-tracker-local.md) — 本地 markdown issue tracker
-     - [triage-labels.md](./triage-labels.md) — 标签映射
-     - [domain.md](./domain.md) — 领域文档使用者规则和布局
+     - [issue-tracker-github.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md) — GitHub issue tracker
+     - [issue-tracker-gitlab.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md) — GitLab issue tracker
+     - [issue-tracker-local.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md) — 本地 markdown issue tracker
+     - [triage-labels.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/triage-labels.md) — 标签映射
+     - [domain.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/domain.md) — 领域文档使用者规则和布局
 
    对于 "other" issue trackers，使用用户的描述从头编写 `docs/agents/issue-tracker.md`。
 

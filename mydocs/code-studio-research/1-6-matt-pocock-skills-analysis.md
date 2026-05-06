@@ -1,4 +1,4 @@
-# Matt Pocock Skills 仓库分析
+# Matt Pocock Skills 仓库分析（索引）
 
 > **分析对象**：[mattpocock/skills](https://github.com/mattpocock/skills)  
 > **分析日期**：2026-05-06  
