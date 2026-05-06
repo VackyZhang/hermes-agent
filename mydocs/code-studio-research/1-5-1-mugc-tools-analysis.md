@@ -6,12 +6,12 @@
 
 > - **主文档**（本文件）：总结性输出，建立整体认知
 > - **子文档**（深入细节）：
->   - `1-5-1-mugc-tools-architecture.md`：整体架构、Agent 系统、Command 系统、Skill 系统、Rules 系统、OpenSpec 元数据
->   - `1-5-2-mugc-tools-agents.md`：11 个 Agent 详细说明（YAML front matter + Markdown）
->   - `1-5-3-mugc-tools-commands.md`：19 个 Command 详细说明（OpenSpec 工作流）
->   - `1-5-4-mugc-tools-skills.md`：69 个 Skill 模块详细说明（SKILL.md + references/）
->   - `1-5-5-mugc-tools-rules.md`：Rules 系统详细说明（.mdc 文件、强制规则机制）
->   - `1-5-6-mugc-tools-openspec.md`：OpenSpec 元数据详细说明（变更管理流程）
+>   - `1-5-2-mugc-tools-architecture.md`：整体架构、Agent 系统、Command 系统、Skill 系统、Rules 系统、OpenSpec 元数据
+>   - `1-5-3-mugc-tools-agents.md`：11 个 Agent 详细说明（YAML front matter + Markdown）
+>   - `1-5-4-mugc-tools-commands.md`：19 个 Command 详细说明（OpenSpec 工作流）
+>   - `1-5-5-mugc-tools-skills.md`：69 个 Skill 模块详细说明（SKILL.md + references/）
+>   - `1-5-6-mugc-tools-rules.md`：Rules 系统详细说明（.mdc 文件、强制规则机制）
+>   - `1-5-7-mugc-tools-openspec.md`：OpenSpec 元数据详细说明（变更管理流程）
 
 ---
 
@@ -56,7 +56,7 @@ mugc_server_ai_tools/
 └── README.md           ← 项目概述
 ```text
 
-**深入细节** → 详见 `1-5-1-mugc-tools-architecture.md`
+**深入细节** → 详见 `1-5-2-mugc-tools-architecture.md`
 
 ### 2.2 Agent 系统（11 个） ###
 
@@ -98,7 +98,7 @@ You are a senior software architect...
 | **模型** | 全部指定（Opus/Sonnet/Haiku） | 部分指定 |
 | **工具** | 全部指定 | 部分指定 |
 
-**深入细节** → 详见 `1-5-2-mugc-tools-agents.md`
+**深入细节** → 详见 `1-5-3-mugc-tools-agents.md`
 
 ### 2.3 Command 系统（19 个） ###
 
@@ -134,7 +134,7 @@ You are a senior software architect...
 | **调用方式** | `/skill-name`（slash 命令） | `/<command-name>` |
 | **功能** | 游戏开发全流程 | OpenSpec 变更管理 + 代码生成 |
 
-**深入细节** → 详见 `1-5-3-mugc-tools-commands.md`
+**深入细节** → 详见 `1-5-4-mugc-tools-commands.md`
 
 ### 2.4 Skill 系统（22 个模块，387 个文件） ###
 
@@ -163,7 +163,7 @@ skills/<skill-name>/
 | **参考文档** | ❌ 无 | ✅ 有（references/ 目录） |
 | **领域专注** | 游戏开发 | 服务器端开发 + Java 生态 + OpenSpec |
 
-**深入细节** → 详见 `1-5-4-mugc-tools-skills.md`
+**深入细节** → 详见 `1-5-5-mugc-tools-skills.md`
 
 ### 2.5 Rules 系统（.mdc 文件） ###
 
@@ -195,7 +195,7 @@ Rule content...
 | **强制机制** | ❌ 无（依赖模型遵守） | ✅ `alwaysApply: true`（强制规则） |
 | **路径级规则** | ✅ 有（`paths:` 字段） | ?（待分析） |
 
-**深入细节** → 详见 `1-5-5-mugc-tools-rules.md`
+**深入细节** → 详见 `1-5-6-mugc-tools-rules.md`
 
 ### 2.6 OpenSpec 元数据（openspec/ 目录） ###
 
@@ -231,7 +231,7 @@ Rule content...
 | **形式化** | ✅ 计划中实现 | ✅ 已实现（但非形式化） |
 | **与项目集成** | ⏳ 待实现 | ✅ 已实现（通过 symlink） |
 
-**深入细节** → 详见 `1-5-6-mugc-tools-openspec.md`
+**深入细节** → 详见 `1-5-7-mugc-tools-openspec.md`
 
 ---
 
@@ -438,12 +438,12 @@ Rule content...
 
 | 子文档 | 内容 |
 | --------- | ------ |
-| `1-5-1-mugc-tools-architecture.md` | 整体架构、Agent 系统、Command 系统、Skill 系统、Rules 系统、OpenSpec 元数据 |
-| `1-5-2-mugc-tools-agents.md` | 11 个 Agent 详细说明（YAML front matter + Markdown、与 CCGS 的对比） |
-| `1-5-3-mugc-tools-commands.md` | 19 个 Command 详细说明（OpenSpec 工作流、与 CCGS Skill 的对比） |
-| `1-5-4-mugc-tools-skills.md` | 22 个 Skill 模块详细说明（SKILL.md + references/、与 CCGS Skill 的对比） |
-| `1-5-5-mugc-tools-rules.md` | Rules 系统详细说明（.mdc 文件、强制规则机制、与 CCGS Rules 的对比） |
-| `1-5-6-mugc-tools-openspec.md` | OpenSpec 元数据详细说明（变更管理流程、与 CodeStudio 的对比） |
+| `1-5-2-mugc-tools-architecture.md` | 整体架构、Agent 系统、Command 系统、Skill 系统、Rules 系统、OpenSpec 元数据 |
+| `1-5-3-mugc-tools-agents.md` | 11 个 Agent 详细说明（YAML front matter + Markdown、与 CCGS 的对比） |
+| `1-5-4-mugc-tools-commands.md` | 19 个 Command 详细说明（OpenSpec 工作流、与 CCGS Skill 的对比） |
+| `1-5-5-mugc-tools-skills.md` | 22 个 Skill 模块详细说明（SKILL.md + references/、与 CCGS Skill 的对比） |
+| `1-5-6-mugc-tools-rules.md` | Rules 系统详细说明（.mdc 文件、强制规则机制、与 CCGS Rules 的对比） |
+| `1-5-7-mugc-tools-openspec.md` | OpenSpec 元数据详细说明（变更管理流程、与 CodeStudio 的对比） |
 
 **下一步**：
 

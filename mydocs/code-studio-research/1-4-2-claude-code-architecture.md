@@ -120,7 +120,7 @@ export class BashTool implements Tool {
 | `Task` | 创建子 Agent 任务 |
 | `MCPTool` | MCP 工具适配 |
 
-**深入细节** → 详见 `1-4-2-claude-code-tool-system.md`
+**深入细节** → 详见 `1-4-5-claude-code-tool-system.md`
 
 ---
 

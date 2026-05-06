@@ -192,7 +192,7 @@ PostToolUse Hook 调用 type: "agent" 触发子 Agent 验证
 
 ---
 
-**文档状态**：✅ 第一版完成（从 `1-4-claude-code-analysis.md` 拆分）
+**文档状态**：✅ 第一版完成（从 `1-4-1-claude-code-analysis.md` 拆分）
 
 **下一步**：
 

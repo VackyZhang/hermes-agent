@@ -170,7 +170,7 @@ ESCALATION: If not resolved in 2 sprints, escalate to Technical Director for bin
 
 ---
 
-**文档状态**：✅ 第一版完成（从 `1-2-ccgs-analysis.md` 拆分）
+**文档状态**：✅ 第一版完成（从 `1-2-1-ccgs-analysis.md` 拆分）
 
 **下一步**：
 

@@ -76,7 +76,7 @@ You are a senior software architect...
 | **模型** | 全部指定（Opus/Sonnet/Haiku） | 部分指定 |
 | **工具** | 全部指定 | 部分指定 |
 
-**深入细节** → 详见 `1-5-2-mugc-tools-agents.md`
+**深入细节** → 详见 `1-5-3-mugc-tools-agents.md`
 
 ---
 
@@ -113,7 +113,7 @@ You are a senior software architect...
 | **调用方式** | `/skill-name`（slash 命令） | `/opsx/<command-name>` |
 | **功能** | 游戏开发全流程 | OpenSpec 变更管理 + 代码生成 |
 
-**深入细节** → 详见 `1-5-3-mugc-tools-commands.md`
+**深入细节** → 详见 `1-5-4-mugc-tools-commands.md`
 
 ---
 
@@ -144,7 +144,7 @@ skills/<skill-name>/
 | **参考文档** | ❌ 无 | ✅ 有（references/ 目录） |
 | **领域专注** | 游戏开发 | 服务器端开发 + Java 生态 + OpenSpec |
 
-**深入细节** → 详见 `1-5-4-mugc-tools-skills.md`
+**深入细节** → 详见 `1-5-5-mugc-tools-skills.md`
 
 ---
 
@@ -176,7 +176,7 @@ Rule content...
 | **强制机制** | ❌ 无（依赖模型遵守） | ✅ `alwaysApply: true`（强制规则） |
 | **路径级规则** | ✅ 有（`paths:` 字段） | ?（待分析） |
 
-**深入细节** → 详见 `1-5-5-mugc-tools-rules.md`
+**深入细节** → 详见 `1-5-6-mugc-tools-rules.md`
 
 ---
 
@@ -212,7 +212,7 @@ Rule content...
 | **形式化** | ✅ 计划中实现 | ✅ 已实现（但非形式化） |
 | **与项目集成** | ⏳ 待实现 | ✅ 已实现（通过 symlink） |
 
-**深入细节** → 详见 `1-5-6-mugc-tools-openspec.md`
+**深入细节** → 详见 `1-5-7-mugc-tools-openspec.md`
 
 ---
 

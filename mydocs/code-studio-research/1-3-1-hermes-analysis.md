@@ -6,11 +6,11 @@
 
 > - **主文档**（本文件）：总结性输出，建立整体认知
 > - **子文档**（深入细节）：
->   - `1-3-1-hermes-agent-loop.md`：Agent 循环详细分析（run_agent.py）
->   - `1-3-2-hermes-tool-system.md`：工具系统详细分析（model_tools.py + tools/）
->   - `1-3-3-hermes-hook-system.md`：Hook 系统详细分析（Python 原生）
->   - `1-3-4-hermes-skill-system.md`：Skill 系统详细分析（skills/ 目录）
->   - `1-3-5-hermes-memory-system.md`：记忆系统详细分析（hermes_state.py + plugins/memory/）
+>   - `1-3-2-hermes-agent-loop.md`：Agent 循环详细分析（run_agent.py）
+>   - `1-3-3-hermes-tool-system.md`：工具系统详细分析（model_tools.py + tools/）
+>   - `1-3-4-hermes-hook-system.md`：Hook 系统详细分析（Python 原生）
+>   - `1-3-5-hermes-skill-system.md`：Skill 系统详细分析（skills/ 目录）
+>   - `1-3-6-hermes-memory-system.md`：记忆系统详细分析（hermes_state.py + plugins/memory/）
 
 ---
 
@@ -70,7 +70,7 @@ hermes-agent/
 └── tests/               ← Pytest suite（~15k tests across ~700 files as of Apr 2026）
 ```text
 
-**深入细节** → 详见 `1-3-1-hermes-agent-loop.md`（Agent 循环）、`1-3-2-hermes-tool-system.md`（工具系统）
+**深入细节** → 详见 `1-3-2-hermes-agent-loop.md`（Agent 循环）、`1-3-3-hermes-tool-system.md`（工具系统）
 
 ### 2.2 Agent 循环（run_agent.py）
 
@@ -107,7 +107,7 @@ while (api_call_count < max_iterations and iteration_budget.remaining > 0) or se
 | **Tool 执行** | `handle_function_call()` 统一处理 |
 | **消息格式** | OpenAI 格式（`{"role": "system/user/assistant/tool", ...}`） |
 
-**深入细节** → 详见 `1-3-1-hermes-agent-loop.md`
+**深入细节** → 详见 `1-3-2-hermes-agent-loop.md`
 
 ### 2.3 工具系统（model_tools.py + tools/）
 
@@ -138,7 +138,7 @@ registry.register(
 
 **自动发现**：任何 `tools/*.py` 文件，只要有顶层 `registry.register()` 调用，就会被自动导入。
 
-**深入细节** → 详见 `1-3-2-hermes-tool-system.md`
+**深入细节** → 详见 `1-3-3-hermes-tool-system.md`
 
 ### 2.4 Hook 系统（Python 原生）
 
@@ -153,7 +153,7 @@ registry.register(
 
 **Hook 配置位置**：`hermes_constants.py` 中的 `HOOKS` 配置。
 
-**深入细节** → 详见 `1-3-3-hermes-hook-system.md`
+**深入细节** → 详见 `1-3-4-hermes-hook-system.md`
 
 ### 2.5 Skill 系统（skills/ 目录）
 
@@ -173,7 +173,7 @@ skills/<skill-name>/
 | **LLM 自动选择** | 当 Skill 的 `whenToUse` 匹配时，LLM 自动调用 | User: `Can you review my code?` → Hermes Agent 自动调用 `/code-review` Skill |
 | **Hook 触发** | 通过 Hook 系统触发 Skill | `post_tool` Hook 调用 `code-review` Skill |
 
-**深入细节** → 详见 `1-3-4-hermes-skill-system.md`
+**深入细节** → 详见 `1-3-5-hermes-skill-system.md`
 
 ### 2.6 记忆系统（hermes_state.py + plugins/memory/）
 
@@ -192,7 +192,7 @@ skills/<skill-name>/
 | **Session 启动** | 注入 Session DB 中的历史对话 |
 | **按需查询** | LLM 通过 `query_memory` 工具查询记忆 |
 
-**深入细节** → 详见 `1-3-5-hermes-memory-system.md`
+**深入细节** → 详见 `1-3-6-hermes-memory-system.md`
 
 ---
 
@@ -398,11 +398,11 @@ skills/<skill-name>/
 
 | 子文档 | 内容 |
 | --------- | ------ |
-| `1-3-1-hermes-agent-loop.md` | Agent 循环详细分析（run_agent.py，核心循环、中断检查、预算控制） |
-| `1-3-2-hermes-tool-system.md` | 工具系统详细分析（model_tools.py + tools/，工具注册、自动发现、执行、错误处理） |
-| `1-3-3-hermes-hook-system.md` | Hook 系统详细分析（Python 原生，Hook 类型、触发时机、配置方式） |
-| `1-3-4-hermes-skill-system.md` | Skill 系统详细分析（skills/ 目录，Skill 定义、调用方式、与 CCGS/Claude Code 的对比） |
-| `1-3-5-hermes-memory-system.md` | 记忆系统详细分析（hermes_state.py + plugins/memory/，记忆类型、注入时机、与 CCGS 的对比） |
+| `1-3-2-hermes-agent-loop.md` | Agent 循环详细分析（run_agent.py，核心循环、中断检查、预算控制） |
+| `1-3-3-hermes-tool-system.md` | 工具系统详细分析（model_tools.py + tools/，工具注册、自动发现、执行、错误处理） |
+| `1-3-4-hermes-hook-system.md` | Hook 系统详细分析（Python 原生，Hook 类型、触发时机、配置方式） |
+| `1-3-5-hermes-skill-system.md` | Skill 系统详细分析（skills/ 目录，Skill 定义、调用方式、与 CCGS/Claude Code 的对比） |
+| `1-3-6-hermes-memory-system.md` | 记忆系统详细分析（hermes_state.py + plugins/memory/，记忆类型、注入时机、与 CCGS 的对比） |
 
 **下一步**：
 

@@ -225,7 +225,7 @@ handle_function_call()
 
 ---
 
-**文档状态**：✅ 第一版完成（从 `1-3-hermes-analysis.md` 拆分）
+**文档状态**：✅ 第一版完成（从 `1-3-1-hermes-analysis.md` 拆分）
 
 **下一步**：
 

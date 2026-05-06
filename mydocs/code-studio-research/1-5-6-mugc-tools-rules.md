@@ -114,7 +114,7 @@ Before developing a feature, you must first read the corresponding skill documen
 
 ---
 
-**文档状态**：✅ 第一版完成（从 `1-5-mugc-tools-analysis.md` 拆分）
+**文档状态**：✅ 第一版完成（从 `1-5-1-mugc-tools-analysis.md` 拆分）
 
 **下一步**：
 

@@ -33,31 +33,31 @@ CodeStudio 相关研究文档，包括：
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `1-2-ccgs-analysis.md` | ✅ 已完成 | CCGS 架构总览 |
-| `1-2-1-ccgs-agents.md` | ✅ 已完成 | 49 个 Agent 详解 |
-| `1-2-2-ccgs-skills.md` | ✅ 已完成 | 72 个 Skill 详解 |
-| `1-2-3-ccgs-hooks.md` | ✅ 已完成 | 12 个 Hook 详解 |
-| `1-2-4-ccgs-rules.md` | ✅ 已完成 | 3 条 Rules 详解 |
-| `1-2-5-ccgs-director-gates.md` | ✅ 已完成 | Director Gates 详解 |
+| `1-2-1-ccgs-analysis.md` | ✅ 已完成 | CCGS 架构总览 |
+| `1-2-2-ccgs-agents.md` | ✅ 已完成 | 49 个 Agent 详解 |
+| `1-2-3-ccgs-skills.md` | ✅ 已完成 | 72 个 Skill 详解 |
+| `1-2-4-ccgs-hooks.md` | ✅ 已完成 | 12 个 Hook 详解 |
+| `1-2-5-ccgs-rules.md` | ✅ 已完成 | 3 条 Rules 详解 |
+| `1-2-6-ccgs-director-gates.md` | ✅ 已完成 | Director Gates 详解 |
 
 #### 2.3 Hermes Agent
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `1-3-hermes-analysis.md` | ✅ 已完成 | Hermes Agent 架构总览 |
-| `1-3-1-hermes-agent-loop.md` | ✅ 已完成 | Agent 循环详解 |
-| `1-3-2-hermes-tool-system.md` | ✅ 已完成 | 工具系统详解 |
-| `1-3-3-hermes-hook-system.md` | ✅ 已完成 | Hook 系统详解 |
-| `1-3-4-hermes-skill-system.md` | ✅ 已完成 | Skill 系统详解 |
-| `1-3-5-hermes-memory-system.md` | ✅ 已完成 | 记忆系统详解（8 个插件） |
+| `1-3-1-hermes-analysis.md` | ✅ 已完成 | Hermes Agent 架构总览 |
+| `1-3-2-hermes-agent-loop.md` | ✅ 已完成 | Agent 循环详解 |
+| `1-3-3-hermes-tool-system.md` | ✅ 已完成 | 工具系统详解 |
+| `1-3-4-hermes-hook-system.md` | ✅ 已完成 | Hook 系统详解 |
+| `1-3-5-hermes-skill-system.md` | ✅ 已完成 | Skill 系统详解 |
+| `1-3-6-hermes-memory-system.md` | ✅ 已完成 | 记忆系统详解（8 个插件） |
 
 #### 2.4 Claude Code CLI
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `1-4-claude-code-analysis.md` | ✅ 已完成 | Claude Code 架构总览 |
-| `1-4-1-claude-code-hooks.md` | ✅ 已完成 | Hook 系统详解（27 种事件） |
-| `1-4-2-claude-code-tool-system.md` | ✅ 已完成 | 工具系统详解 |
+| `1-4-1-claude-code-analysis.md` | ✅ 已完成 | Claude Code 架构总览 |
+| `1-4-3-claude-code-hooks.md` | ✅ 已完成 | Hook 系统详解（27 种事件） |
+| `1-4-5-claude-code-tool-system.md` | ✅ 已完成 | 工具系统详解 |
 | `1-4-3-claude-code-hook-system.md` | ✅ 已完成 | Hook 系统详解 |
 | `1-4-4-claude-code-skill-system.md` | ✅ 已完成 | Skill 系统详解 |
 | `1-4-5-claude-code-summary.md` | ✅ 已完成 | 总结与对比 |
@@ -66,13 +66,13 @@ CodeStudio 相关研究文档，包括：
 
 | 文档 | 状态 | 内容 |
 | ------ | ------ | ------ |
-| `1-5-mugc-tools-analysis.md` | ✅ 已完成 | mugc_tools 架构总览 |
-| `1-5-1-mugc-tools-architecture.md` | ✅ 已完成 | 架构详解 |
-| `1-5-2-mugc-tools-agents.md` | ✅ 已完成 | Agent 系统详解 |
-| `1-5-3-mugc-tools-commands.md` | ✅ 已完成 | Command 系统详解（58 个） |
-| `1-5-4-mugc-tools-skills.md` | ✅ 已完成 | Skill 系统详解（69 个） |
-| `1-5-5-mugc-tools-rules.md` | ✅ 已完成 | Rules 系统详解 |
-| `1-5-6-mugc-tools-openspec.md` | ✅ 已完成 | OpenSpec 详解 |
+| `1-5-1-mugc-tools-analysis.md` | ✅ 已完成 | mugc_tools 架构总览 |
+| `1-5-2-mugc-tools-architecture.md` | ✅ 已完成 | 架构详解 |
+| `1-5-3-mugc-tools-agents.md` | ✅ 已完成 | Agent 系统详解 |
+| `1-5-4-mugc-tools-commands.md` | ✅ 已完成 | Command 系统详解（58 个） |
+| `1-5-5-mugc-tools-skills.md` | ✅ 已完成 | Skill 系统详解（69 个） |
+| `1-5-6-mugc-tools-rules.md` | ✅ 已完成 | Rules 系统详解 |
+| `1-5-7-mugc-tools-openspec.md` | ✅ 已完成 | OpenSpec 详解 |
 
 ### 三、实践记录
 

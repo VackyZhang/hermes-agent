@@ -292,8 +292,8 @@ Claude Code 的 Skill 系统支持 **3 种来源**：
 
 | 子文档 | 内容 |
 | --------- | ------ |
-| `1-4-1-claude-code-architecture.md` | 整体架构、Agent 循环细节 |
-| `1-4-2-claude-code-tool-system.md` |
+| `1-4-2-claude-code-architecture.md` | 整体架构、Agent 循环细节 |
+| `1-4-5-claude-code-tool-system.md` |
 | 类型安全、工具定义结构、内置工具列表） |
 | `1-4-3-claude-code-hook-system.md` |
 | 输出协议、配置位置） |

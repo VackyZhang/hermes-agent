@@ -6,11 +6,11 @@
 
 > - **主文档**（本文件）：总结性输出，建立整体认知
 > - **子文档**（深入细节）：
->   - `1-2-1-ccgs-agents.md`：49 个 Agent 详细说明（三层结构、协作协议）
->   - `1-2-2-ccgs-skills.md`：72 个 Skill 详细说明（9 个功能分类、工作流）
->   - `1-2-3-ccgs-hooks.md`：12 个 Hook 详细说明（4 个 Hook 类型、触发时机）
->   - `1-2-4-ccgs-rules.md`：11 条 Rules 详细说明（路径级规则、编码规范）
->   - `1-2-5-ccgs-director-gates.md`：17 个 Director Gates 详细说明（三层 Gates、裁决格式）
+>   - `1-2-2-ccgs-agents.md`：49 个 Agent 详细说明（三层结构、协作协议）
+>   - `1-2-3-ccgs-skills.md`：72 个 Skill 详细说明（9 个功能分类、工作流）
+>   - `1-2-4-ccgs-hooks.md`：12 个 Hook 详细说明（4 个 Hook 类型、触发时机）
+>   - `1-2-5-ccgs-rules.md`：11 条 Rules 详细说明（路径级规则、编码规范）
+>   - `1-2-6-ccgs-director-gates.md`：17 个 Director Gates 详细说明（三层 Gates、裁决格式）
 
 ---
 
@@ -56,7 +56,7 @@ CCGS 模板（.claude/ 目录）
 
 4. **路径级规则**：不同目录（gameplay、network、ui...）强制执行不同的编码规范
 
-**深入细节** → 详见 `1-2-1-ccgs-agents.md`（Agent 系统）、`1-2-2-ccgs-skills.md`（Skill 系统）
+**深入细节** → 详见 `1-2-2-ccgs-agents.md`（Agent 系统）、`1-2-3-ccgs-skills.md`（Skill 系统）
 
 ### 2.2 Agent 系统（49 个）
 
@@ -84,7 +84,7 @@ skills: [brainstorm, design-review]
 ---
 ```text
 
-**深入细节** → 详见 `1-2-1-ccgs-agents.md`（49 个 Agent 详细说明、协作协议）
+**深入细节** → 详见 `1-2-2-ccgs-agents.md`（49 个 Agent 详细说明、协作协议）
 
 ### 2.3 Skill 系统（72 个）
 
@@ -99,7 +99,7 @@ skills: [brainstorm, design-review]
 | 发布 & 部署 | 6 | `/build`, `/deploy`, `/create-patch-notes` |
 | 协作 & 审查 | 4 | `/code-review`, `/gate-check`, `/create-pull-request` |
 
-**深入细节** → 详见 `1-2-2-ccgs-skills.md`（72 个 Skill 详细说明、工作流）
+**深入细节** → 详见 `1-2-3-ccgs-skills.md`（72 个 Skill 详细说明、工作流）
 
 ### 2.4 Hook 系统（12 个）
 
@@ -117,7 +117,7 @@ skills: [brainstorm, design-review]
 | **SubagentStop** | 子 Agent 停止时 | `log-agent-stop.sh`（记录 Agent 完成） |
 | **Notification** | 通知事件发生时 | `notify.sh`（显示桌面通知） |
 
-**深入细节** → 详见 `1-2-3-ccgs-hooks.md`（12 个 Hook 详细说明、退出码含义）
+**深入细节** → 详见 `1-2-4-ccgs-hooks.md`（12 个 Hook 详细说明、退出码含义）
 
 ### 2.5 Rules 系统（11 条）
 
@@ -131,7 +131,7 @@ skills: [brainstorm, design-review]
 | `ui-code.md` | `src/ui/**` | 数据驱动布局、无游戏逻辑、响应式、本地化 |
 | `network-code.md` | `src/network/**` | 确定性、延迟补偿、带宽优化、安全 |
 
-**深入细节** → 详见 `1-2-4-ccgs-rules.md`（11 条 Rules 详细说明、编码规范）
+**深入细节** → 详见 `1-2-5-ccgs-rules.md`（11 条 Rules 详细说明、编码规范）
 
 ### 2.6 Director Gates（17 个）
 
@@ -176,7 +176,7 @@ ESCALATION RULES:
 
 ```text
 
-**深入细节** → 详见 `1-2-5-ccgs-director-gates.md`（17 个 Director Gates 详细说明、裁决逻辑）
+**深入细节** → 详见 `1-2-6-ccgs-director-gates.md`（17 个 Director Gates 详细说明、裁决逻辑）
 
 ---
 
@@ -334,11 +334,11 @@ ESCALATION RULES:
 
 | 子文档 | 内容 |
 | --------- | ------ |
-| `1-2-1-ccgs-agents.md` | 49 个 Agent 详细说明（三层结构、协作协议、YAML 配置） |
-| `1-2-2-ccgs-skills.md` | 72 个 Skill 详细说明（9 个功能分类、工作流、YAML 配置） |
-| `1-2-3-ccgs-hooks.md` | 12 个 Hook 详细说明（4 个 Hook 类型、触发时机、退出码含义） |
-| `1-2-4-ccgs-rules.md` | 11 条 Rules 详细说明（路径级规则、编码规范、YAML 配置） |
-| `1-2-5-ccgs-director-gates.md` | 17 个 Director Gates 详细说明（三层 Gates、裁决格式、升级规则） |
+| `1-2-2-ccgs-agents.md` | 49 个 Agent 详细说明（三层结构、协作协议、YAML 配置） |
+| `1-2-3-ccgs-skills.md` | 72 个 Skill 详细说明（9 个功能分类、工作流、YAML 配置） |
+| `1-2-4-ccgs-hooks.md` | 12 个 Hook 详细说明（4 个 Hook 类型、触发时机、退出码含义） |
+| `1-2-5-ccgs-rules.md` | 11 条 Rules 详细说明（路径级规则、编码规范、YAML 配置） |
+| `1-2-6-ccgs-director-gates.md` | 17 个 Director Gates 详细说明（三层 Gates、裁决格式、升级规则） |
 
 **下一步**：
 

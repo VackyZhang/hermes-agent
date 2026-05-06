@@ -162,7 +162,7 @@ User: /opsx/openspec-apply-change <change-id>
 
 ---
 
-**文档状态**：✅ 第一版完成（从 `1-5-mugc-tools-analysis.md` 拆分）
+**文档状态**：✅ 第一版完成（从 `1-5-1-mugc-tools-analysis.md` 拆分）
 
 **下一步**：
 
